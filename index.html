@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Recipe Website</title>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1 class="logo">Delicious Recipe</h1>
+                <nav>
+                    <div class="menu-icon">&#9776;</div>
+                    <ul class="nav-list">
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Recipes</li>
+                        <li>Contact</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-section">
+                <h2>Welcome to our Recipe Collection</h2>
+                <p>Search mouth-watering recipes to satisfy your craving.</p>
+
+                <form action="#" class="search-box">
+                    <input type="text" placeholder="Search Recipe">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="recipes">
+            <h2>Featured Recipes</h2>
+            <div class="recipe-section">
+                <div class="recipe-card">
+                    <img src="strawberry ice.jpg" alt="Strawberry Custard">
+                    <h2>Strawberry Custard</h2>
+                    <p>Combine the strawberry mixture with the cream mixture, depending on your preference.</p>
+                    <button class="like-button" onclick="likeRecipe(0)">❤ Like <span id="like-count-0">0</span></button>
+                    <a href="#">View recipe</a>
+                </div>
+                <div class="recipe-card">
+                    <img src="treat yourself.jpeg" alt="Fast food">
+                    <h2>Fast food</h2>
+                    <p>While still warm, sprinkle with powdered sugar or cinnamon sugar for extra sweetness.</p>
+                    <button class="like-button" onclick="likeRecipe(1)">❤ Like <span id="like-count-1">0</span></button>
+                    <a href="#">View recipe</a>
+                </div>
+                <div class="recipe-card">
+                    <img src="health junk food.jpeg" alt="Health junk food">
+                    <h2>Health junk food</h2>
+                    <p>Junk food refers to food that is high in calories, sugar, and unhealthy fats.</p>
+                    <button class="like-button" onclick="likeRecipe(2)">❤ Like <span id="like-count-2">0</span></button>
+                    <a href="#">View recipe</a>
+                </div>
+                <div class="recipe-card">
+                    <img src="famous food street.jpeg" alt="Famous food">
+                    <h2>Famous food</h2>
+                    <p>Burgers: One of the most iconic fast foods. French fries are crispy and golden.</p>
+                    <button class="like-button" onclick="likeRecipe(3)">❤ Like <span id="like-count-3">0</span></button>
+                    <a href="#">View recipe</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="like-section">
+            <button class="like-button" onclick="toggleFavorites()">❤ Like</button>
+            <div id="favorite-recipes" class="hidden">
+                <h2>Favorite Recipes</h2>
+                <ul>
+                    <li>Chocolate Cake</li>
+                    <li>Momos Maggi Panipuri</li>
+                    <li>Grilled Cheese Sandwich</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <form class="contact-form" action="#">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <footer>
+            <div>
+                <p>&copy; 2024 Delicious Recipes</p>
+            </div>
+        </footer>
+
+        <script>
+            var likeCounts = [0, 0, 0, 0]; 
+
+            function likeRecipe(index) {
+                likeCounts[index]++;
+                document.getElementById('like-count-' + index).textContent = likeCounts[index];
+            }
+
+            function toggleFavorites() {
+                var favorites = document.getElementById("favorite-recipes");
+                favorites.classList.toggle("hidden");
+            }
+        </script>
+    </body>
+</html>
